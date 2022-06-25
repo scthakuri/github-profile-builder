@@ -1,26 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react'
+import HomePage from './components/HomePage'
+import Navbar from './components/Navbar'
+import { AppContext } from './context/AppContext'
+import "./components/styles/app.css";
+import Footer from './components/footer';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+export default function App() {
+
+    const [username, setUsername] = useState<string>("")
+
+    return (
+        <AppContext.Provider
+            value={{
+                username, setUsername,
+                
+            }}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+            <Navbar />
+            
+            <div className="slider_container">
+                <div className="container">
+                    <div className="row">
+                        <div className="offset-md-1 col-md-10">
+                            <div className="slider_content shadow">
+                                <HomePage />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <Footer />
 
-export default App;
+        </AppContext.Provider>
+    )
+}
