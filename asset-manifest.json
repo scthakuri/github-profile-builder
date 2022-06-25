@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.9777fa60.css",
-    "main.js": "/static/js/main.21813743.js",
-    "static/js/787.f6b537af.chunk.js": "/static/js/787.f6b537af.chunk.js",
-    "index.html": "/index.html",
-    "main.9777fa60.css.map": "/static/css/main.9777fa60.css.map",
-    "main.21813743.js.map": "/static/js/main.21813743.js.map",
-    "787.f6b537af.chunk.js.map": "/static/js/787.f6b537af.chunk.js.map"
+    "main.css": "/github-profile-builder/static/css/main.9777fa60.css",
+    "main.js": "/github-profile-builder/static/js/main.6c7cfa91.js",
+    "static/js/787.f6b537af.chunk.js": "/github-profile-builder/static/js/787.f6b537af.chunk.js",
+    "index.html": "/github-profile-builder/index.html",
+    "main.9777fa60.css.map": "/github-profile-builder/static/css/main.9777fa60.css.map",
+    "main.6c7cfa91.js.map": "/github-profile-builder/static/js/main.6c7cfa91.js.map",
+    "787.f6b537af.chunk.js.map": "/github-profile-builder/static/js/787.f6b537af.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.9777fa60.css",
-    "static/js/main.21813743.js"
+    "static/js/main.6c7cfa91.js"
   ]
 }
