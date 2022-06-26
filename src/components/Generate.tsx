@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { socialURLGenerator } from '../constants/config';
 import { AppContext } from '../context/AppContext';
 import Loading from './elements/Loading'
-import ReactMarkdown from 'react-markdown'
+// import ReactMarkdown from 'react-markdown'
 
 function Generate() {
 
