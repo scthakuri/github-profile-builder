@@ -58,7 +58,7 @@ function Generate() {
         
         //generate social codes
         generateSocialCode();
-        setLoading(false);
+        // setLoading(false);
     }
 
 

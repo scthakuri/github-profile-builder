@@ -20,7 +20,7 @@ export default function App() {
 😄 Pronouns: He/His
 ⚡ Fun fact: `);
     const [activeSkill, setActiveSkill] = useState<string[]>([]);
-    const [generate, setGenerate] = useState<boolean>(true);
+    const [generate, setGenerate] = useState<boolean>(false);
 
     return (
         <AppContext.Provider
