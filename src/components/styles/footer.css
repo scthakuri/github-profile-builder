@@ -1,9 +1,9 @@
 .footer_container{
-    background-color: var(--primary);
+    /* background-color: var(--primary); */
     padding-bottom: 80px;
     padding-top: 80px;
     text-align: center;
-    margin-top: 5rem;
+    /* margin-top: 5rem; */
 }
 
 .footer_container h2,

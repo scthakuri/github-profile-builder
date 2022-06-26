@@ -1,8 +1,7 @@
 .header_container{
-    background-color: var(--primary);
+    /* background-color: var(--primary); */
     padding: 4rem 0;
     text-align: center;
-    padding-bottom: 7rem;
 }
 
 .header_container p{
