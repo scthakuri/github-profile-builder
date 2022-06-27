@@ -239,10 +239,10 @@ function GithubStat({ onBackPress }: Props) {
     }, [compact])
 
     const generateMarkDown = () => {
-        let markdowncode = `# 📊 GitHub Stats:\n`;
+        let markdowncode = `## 📊 GitHub Stats:\n`;
         markdowncode += `![](${staturl})<br/>\n`;
         markdowncode += `![](${streakurl})<br/>\n`;
-        markdowncode += `![](${streakurl})<br/>\n`;
+        markdowncode += `![](${langurl})<br/>\n`;
         localStorage.setItem("github_stat_markdown", markdowncode);
     }
 
@@ -251,6 +251,10 @@ function GithubStat({ onBackPress }: Props) {
         setStreakurl(generateStreakURL());
         setLangurl(generateLangURL());
     }, [theme, border, lifetimecommit, privatecommit])
+
+    useEffect(() => {
+        window.scrollTo({top: 0, left: 0, behavior: 'smooth' });
+    }, [])
 
     if( visible ){
         return (

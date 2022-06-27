@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import HomePage from './components/HomePage'
 import Navbar from './components/Navbar'
 import { AppContext } from './context/AppContext'
@@ -19,31 +19,29 @@ export default function App() {
 😄 Pronouns: He/His
 ⚡ Fun fact: `);
     const [activeSkill, setActiveSkill] = useState<string[]>([]);
-    const [generate, setGenerate] = useState<boolean>(false);
 
     return (
         <AppContext.Provider
             value={{
                 username, setUsername,
                 aboutme, setAboutme,
-                activeSkill, setActiveSkill,
-                generate, setGenerate
+                activeSkill, setActiveSkill
             }}
         >
             <Navbar />
-            
+
             <div className="slider_container">
                 <div className="container">
                     <div className="row">
                         <div className="offset-md-1 col-md-10">
                             <div className="slider_content shadow">
-                            <HomePage />
+                                <HomePage />
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            
+
             <Footer />
             <Toaster />
         </AppContext.Provider>

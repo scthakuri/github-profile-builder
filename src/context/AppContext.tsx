@@ -7,8 +7,6 @@ export type ContextData = {
     setAboutme : (value : string) => void
     activeSkill: string[];
     setActiveSkill : (value : string[]) => void
-    generate: boolean;
-    setGenerate : (value : boolean) => void
 }
 
 const ContextDefaultValue: ContextData = {
@@ -17,9 +15,7 @@ const ContextDefaultValue: ContextData = {
     aboutme : ``,
     setAboutme : () => {},
     activeSkill : [],
-    setActiveSkill : () => {},
-    generate: false,
-    setGenerate : () => {}
+    setActiveSkill : () => {}
 }
 
 export const AppContext = React.createContext<ContextData>(ContextDefaultValue);

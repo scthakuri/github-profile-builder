@@ -6,28 +6,33 @@ export interface ThemeProps {
 }
 
 export interface GitubStat {
-    theme : ThemeProps | null;
-    border : boolean;
-    lifetimecommit : boolean;
-    privatecommit : boolean;
-    compact : boolean;
+    theme: ThemeProps | null;
+    border: boolean;
+    lifetimecommit: boolean;
+    privatecommit: boolean;
+    compact: boolean;
 }
 
 export interface SocialInputProps {
-    type : string;
-    value : string;
-    onChange : (newValue : string) => void;
-    svg : () => ReactNode;
+    type: string;
+    value: string;
+    onChange: (newValue: string) => void;
+    svg: () => ReactNode;
 }
 
 export interface SlideProps {
     onBackPress: () => void
 }
 
-export interface SocialGeneratorItemProps{
-    generate : (value : string) => void;
+export interface SocialProfileBadgeProps {
+    title: string;
+    label: string;
+    github?: boolean;
+    url: string;
+    theme: ThemeProps | null;
+    onChangeURL: (value: string) => void;
 }
 
-export interface SocialGeneratorProps {
-    twitter : SocialGeneratorItemProps;
+export interface ColorProps {
+    hex?: string;
 }

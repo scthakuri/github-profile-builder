@@ -399,3 +399,11 @@
 .wmde-markdown h1, .wmde-markdown h2, .wmde-markdown h3, .wmde-markdown h4, .wmde-markdown h5, .wmde-markdown h6{
     margin: 0;
 }
+
+.nepal_svg > path{
+    fill: #21222e;
+}
+
+.container_preview_container .container_preview{
+    width: 100%;
+}

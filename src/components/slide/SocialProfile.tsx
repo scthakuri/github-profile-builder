@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { generateSocialProfile } from '../../constants/config';
 import { SlideProps } from '../../constants/type';
 import SliderHeader from '../elements/SliderHeader'
@@ -55,6 +55,10 @@ function SocialProfile({ onBackPress }: SlideProps) {
 
         localStorage.setItem("social_profile_markdown", markdowncode);
     }
+
+    useEffect(() => {
+        window.scrollTo({top: 0, left: 0, behavior: 'smooth' });
+    }, [])
 
     if( visible ){
         return (

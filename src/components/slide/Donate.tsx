@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { donateURLGenerator } from '../../constants/config';
 import SliderHeader from '../elements/SliderHeader'
 import Additonal from './Additonal';
@@ -31,6 +31,10 @@ function Donate({ onBackPress }: Props) {
             
         }
     }
+
+    useEffect(() => {
+        window.scrollTo({top: 0, left: 0, behavior: 'smooth' });
+    }, [])
 
     if( visible ){
         return (

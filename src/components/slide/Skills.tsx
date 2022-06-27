@@ -19,14 +19,19 @@ function Skills({ onBackPress }: SlideProps) {
     const [url, setUrl] = useState("https://img.shields.io/badge/-GraphQL-E10098?style=for-the-badge&logo=graphql&logoColor=white");
 
     useEffect(() => {
-        localStorage.setItem("skill_theme", JSON.stringify(theme));
+        // localStorage.setItem("skill_theme", JSON.stringify(theme));
         setUrl(`https://img.shields.io/badge/-GraphQL-E10098?style=${theme?.value || "for-the-badge"}&logo=graphql&logoColor=white`);
     }, [theme])
+
+    useEffect(() => {
+        window.scrollTo({top: 0, left: 0, behavior: 'smooth' });
+    }, [])
 
     const generateMarkDown = () => {
         try {
             let markdowncode = '';
 
+            const activeTheme = theme?.value || "for-the-badge";
             if( activeSkill.length > 0 ){
                 activeSkill.map((item) => {
                     const parts = item.split("_");
@@ -35,7 +40,9 @@ function Skills({ onBackPress }: SlideProps) {
 
                     if( skillType && skillType.length > 0 ){
                         const skillData = skills.filter((x) => x.key == skillType)[0].data[skillIndex];
-                        markdowncode += `![${skillData.title}](${skillData.url})`;
+                        let skillURL = skillData?.url;
+                        skillURL = skillURL.replace("{{THEME}}", activeTheme);
+                        markdowncode += `![${skillData.title}](${skillURL})   `;
                     }
                 })
             }

@@ -2,17 +2,13 @@ import React, { useEffect, useState } from 'react'
 import Select, { ActionMeta } from 'react-select'
 import InputColor, { Color, InputColorProps } from 'react-input-color';
 import { AppContext } from '../../context/AppContext';
+import { ColorProps, ThemeProps } from '../../constants/type';
 
-interface ThemeProps {
-    value: string;
-    label: string;
+interface Props {
+    onChange : (value : ThemeProps | null) => void;
 }
 
-interface ColorProps {
-    hex?: string;
-}
-
-function ProfileViews() {
+function ProfileViews({onChange} : Props) {
 
     const { username } = React.useContext(AppContext);
     const stylesOptions = [
@@ -55,6 +51,11 @@ function ProfileViews() {
             
         }
     }
+
+    useEffect(() => {
+        onChange(style);
+    }, [style])
+    
 
     useEffect(() => {
         let prevurl = `https://komarev.com/ghpvc/?username=${username}`;

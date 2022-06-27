@@ -1,15 +1,20 @@
-import React, { useState } from 'react'
-import { SlideProps } from '../../constants/type'
+import React, { useEffect, useState } from 'react'
+import { SlideProps, ThemeProps } from '../../constants/type'
 import { AppContext } from '../../context/AppContext'
 import ProfileViews from '../elements/ProfileViews'
 import SliderHeader from '../elements/SliderHeader'
 import Trophy from '../elements/Trophy'
 import Generate from './Generate'
+import SocialBadges from './SocialBadges'
 
 function Additonal({ onBackPress }: SlideProps) {
     const [visible, setVisible] = useState(true);
 
     const { aboutme } = React.useContext(AppContext);
+    const [theme, setTheme] = useState<ThemeProps | null>({
+        label: "For the Badge",
+        value: "for-the-badge"
+    });
 
     const generateFinalMarkDown = () => {
         try {
@@ -17,6 +22,7 @@ function Additonal({ onBackPress }: SlideProps) {
             markdowncode += localStorage.getItem("profile_views_markdown") + "\n";
             markdowncode += aboutme.replace(/(?:\r\n|\r|\n)/g, '<br>');
             markdowncode += '\n\n';
+            markdowncode += localStorage.getItem("social_badges") + "\n";
             markdowncode += localStorage.getItem("social_profile_markdown") + "\n";
             markdowncode += localStorage.getItem("skill_markdown") + "\n";
             markdowncode += localStorage.getItem("github_stat_markdown") + "\n";
@@ -29,6 +35,10 @@ function Additonal({ onBackPress }: SlideProps) {
             
         }
     }
+
+    useEffect(() => {
+        window.scrollTo({top: 0, left: 0, behavior: 'smooth' });
+    }, [])
 
     if( visible ){
         return (
@@ -43,7 +53,13 @@ function Additonal({ onBackPress }: SlideProps) {
                     <div className="row">
                         <Trophy />
                         <div className="divider"></div>
-                        <ProfileViews />
+                        <ProfileViews 
+                            onChange={setTheme}
+                        />
+                        <div className="divider"></div>
+                        <SocialBadges 
+                            theme={theme}
+                        />
     
                         <div className='btn_container mt-3'>
                             <button type="button" className="btn" onClick={() => {

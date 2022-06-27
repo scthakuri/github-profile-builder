@@ -13,6 +13,7 @@ function Generate({ onBackPress }: SlideProps) {
     const finalData = localStorage.getItem("final_markdowncode") || "";
 
     useEffect(() => {
+        window.scrollTo({top: 0, left: 0, behavior: 'smooth' });
         setLoading(true);
         setTimeout(() => {
             setLoading(false);

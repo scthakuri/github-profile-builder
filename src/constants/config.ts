@@ -1,5 +1,3 @@
-import { SocialGeneratorProps } from "./type";
-
 export const themeOptions = [
     {
         label: "For the badge",

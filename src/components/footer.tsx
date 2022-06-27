@@ -8,8 +8,8 @@ function Footer() {
                 <div className="container">
                     <div className="row">
                         <div className="offset-md-2 offset-lg-3 col-md-8 col-lg-6">
-                            <h2>Support GPG 💖</h2>
-                            <p>Our maintainers devote their time, effort, and heart to ensure Github profile generator keeps getting better. Support us by donating to our collective 🙏</p>
+                            <h2>Support GPB 💖</h2>
+                            <p>Please contribute  🙏</p>
 
                             <br />
 
@@ -21,18 +21,7 @@ function Footer() {
                                         <p className="content-text">Feel free to ask questions, report issues, and meet new people.</p>
                                     </div>
                                 </div>
-                                <a href="https://opencollective.com/chakra-ui" rel="noopener" target="_blank">Contribute</a>
-                            </div>
-
-                            <div className="contribute_item shadow-sm">
-                                <div className="contribute_item_content">
-                                    <svg viewBox="0 0 569 546" focusable="false" className="chakra-icon css-g32gbx"><g><circle cx="362.589996" cy="204.589996" r="204.589996" fill="#f96854"></circle><rect fill="#052d49" height="545.799988" width="100" x="0" y="0"></rect></g></svg>
-                                    <div className="content">
-                                        <p className="content-title">Patreon</p>
-                                        <p className="content-text">Sponsor the creator, Segun Adebayo</p>
-                                    </div>
-                                </div>
-                                <a href="https://opencollective.com/chakra-ui" rel="noopener" target="_blank">Donate</a>
+                                <a href="https://github.com/sureshchand12a/github-profile-builder" rel="noopener" target="_blank">Contribute</a>
                             </div>
 
                         </div>
@@ -46,9 +35,9 @@ function Footer() {
                         <div className="col-12">
                             <p className="chakra-text css-itvw0n"><span className='text-white'>Proudly made in
                                 
-                                <svg xmlns="http://www.w3.org/2000/svg" width="640" height="480" viewBox="0 0 640 480"><defs><clipPath id="a"><path fillOpacity=".67" d="M0-15.957h512v512H0z"/></clipPath></defs><path fill="#fff" d="M0 0h640v480H0z"/><g clipPath="url(#a)" transform="translate(0 14.96) scale(.9375)"><g fillRule="evenodd"><path fill="#ce0000" stroke="#000063" strokeWidth="13.833" d="M6.54 489.54l378.786-.01L137.399 238.11l257.263.302L6.561-9.474 6.54 489.54z"/><path fill="#fff" d="M180.737 355.803l-26.986 8.936 21.11 19.862-28.438-1.827 11.716 26.232-25.549-12.29.526 28.597-18.786-20.9-10.741 26.632-9.15-26.32-20.365 20.588 1.861-27.734-26.884 11.427 12.602-24.918-29.335.513 21.43-18.322-27.295-10.476 26.987-8.923-21.122-19.862 28.436 1.815-11.703-26.22 25.55 12.29-.527-28.61 18.787 20.901 10.728-26.62 9.162 26.32 20.365-20.6-1.873 27.734 26.896-11.414-12.601 24.917 29.322-.513-21.43 18.323zM148.32 171.125l-11.33 8.387 5.584 4.614c13.561-10.482 23.211-20.062 30.753-35.96 1.769 21.22-17.683 68.855-68.73 69.381-54.633-.046-73.59-50.587-71.482-70.276 10.037 18.209 16.161 27.088 31.916 36.568l4.82-4.424-10.671-8.891 13.737-3.572-7.39-12.44 14.391 1.05-1.808-14.486 12.616 7.383 3.948-13.484 9.065 10.86 8.491-10.296 4.624 13.99 11.79-8.203-1.512 14.228 14.133-1.659-6.626 13.153 13.682 4.077z"/></g></g></svg>
+                                <svg className='nepal_svg' xmlns="http://www.w3.org/2000/svg" width="640" height="480" viewBox="0 0 640 480"><defs><clipPath id="a"><path fillOpacity=".67" d="M0-15.957h512v512H0z"/></clipPath></defs><path fill="#fff" d="M0 0h640v480H0z"/><g clipPath="url(#a)" transform="translate(0 14.96) scale(.9375)"><g fillRule="evenodd"><path fill="#ce0000" stroke="#000063" strokeWidth="13.833" d="M6.54 489.54l378.786-.01L137.399 238.11l257.263.302L6.561-9.474 6.54 489.54z"/><path fill="#fff" d="M180.737 355.803l-26.986 8.936 21.11 19.862-28.438-1.827 11.716 26.232-25.549-12.29.526 28.597-18.786-20.9-10.741 26.632-9.15-26.32-20.365 20.588 1.861-27.734-26.884 11.427 12.602-24.918-29.335.513 21.43-18.322-27.295-10.476 26.987-8.923-21.122-19.862 28.436 1.815-11.703-26.22 25.55 12.29-.527-28.61 18.787 20.901 10.728-26.62 9.162 26.32 20.365-20.6-1.873 27.734 26.896-11.414-12.601 24.917 29.322-.513-21.43 18.323zM148.32 171.125l-11.33 8.387 5.584 4.614c13.561-10.482 23.211-20.062 30.753-35.96 1.769 21.22-17.683 68.855-68.73 69.381-54.633-.046-73.59-50.587-71.482-70.276 10.037 18.209 16.161 27.088 31.916 36.568l4.82-4.424-10.671-8.891 13.737-3.572-7.39-12.44 14.391 1.05-1.808-14.486 12.616 7.383 3.948-13.484 9.065 10.86 8.491-10.296 4.624 13.99 11.79-8.203-1.512 14.228 14.133-1.659-6.626 13.153 13.682 4.077z"/></g></g></svg>
 
-                            </span><span>by Suresh Chand</span></p>
+                            </span><span className='text-white'>by Suresh Chand</span></p>
 
                             <div className="footer_social">
                                 <a target="_blank" rel="noopener" href="https://github.com/sureshchand12a">
