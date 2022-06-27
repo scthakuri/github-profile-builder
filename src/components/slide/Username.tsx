@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { AppContext } from '../../context/AppContext'
 import toast from 'react-hot-toast';
 
@@ -10,6 +10,12 @@ function Username({ onNextPress }: Props) {
 
     const { username, setUsername } = React.useContext(AppContext);
 
+    useEffect(() => {
+        localStorage.clear();
+        console.log("Cleared Successfully!!");
+    }, [])
+
+
     return (
         <div className="container">
 
@@ -18,9 +24,9 @@ function Username({ onNextPress }: Props) {
             <div className="webflow-style-input">
                 <input type="text" placeholder="Github Username" value={username} onChange={(e: React.FormEvent<HTMLInputElement>) => setUsername(e.currentTarget.value)}></input>
                 <button type="button" onClick={() => {
-                    if( username.length > 0 ){
+                    if (username.length > 0) {
                         onNextPress();
-                    }else{
+                    } else {
                         toast.error("Please provide Github Username!!!");
                     }
                 }}>

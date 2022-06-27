@@ -99,6 +99,25 @@ function Trophy() {
     const [enable, setEnable] = useState<boolean>(true);
     const [url, setUrl] = useState<string>(`https://github-profile-trophy.vercel.app/?username=${username}`);
 
+
+    const saveMarkdownCode = () => {
+        try {
+            let markdowncode = ``;
+
+            if( enable ){
+                markdowncode = `![](${url})`;
+
+                if( markdowncode.length > 0 ){
+                    markdowncode = `## 🏆 GitHub Trophies\n` + markdowncode;
+                }
+            }
+
+            localStorage.setItem("trophy_markdown", markdowncode);
+        } catch (error) {
+            
+        }
+    }
+
     useEffect(() => {
         let prevurl = `https://github-profile-trophy.vercel.app/?username=${username}&theme=${theme?.value || "discord"}`;
         prevurl += `&no-bg=${transparent ? "true" : "false"}`;
@@ -106,15 +125,17 @@ function Trophy() {
         prevurl += `&margin-h=${marginh || "0"}`
         prevurl += `&margin-w=${marginw || "0"}`
 
-        localStorage.setItem("trophy_data", JSON.stringify({
-            enable : enable,
-            theme : theme?.value || "discord",
-            transparent : transparent,
-            border : border,
-            marginh : marginh || 0,
-            marginw : marginw || 0,
-            url : prevurl
-        }));
+        saveMarkdownCode();
+
+        // localStorage.setItem("trophy_data", JSON.stringify({
+        //     enable : enable,
+        //     theme : theme?.value || "discord",
+        //     transparent : transparent,
+        //     border : border,
+        //     marginh : marginh || 0,
+        //     marginw : marginw || 0,
+        //     url : prevurl
+        // }));
 
         setUrl(prevurl);
     }, [transparent, border, marginw, marginh, theme])

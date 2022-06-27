@@ -5,7 +5,6 @@ import { AppContext } from './context/AppContext'
 import "./components/styles/app.css";
 import "./components/styles/slide.css";
 import Footer from './components/footer';
-import Generate from './components/Generate';
 import { Toaster } from 'react-hot-toast';
 
 export default function App() {
@@ -38,9 +37,7 @@ export default function App() {
                     <div className="row">
                         <div className="offset-md-1 col-md-10">
                             <div className="slider_content shadow">
-                                {
-                                    generate ? <Generate /> : <HomePage />
-                                }
+                            <HomePage />
                             </div>
                         </div>
                     </div>

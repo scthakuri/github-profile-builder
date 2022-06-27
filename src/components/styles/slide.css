@@ -114,13 +114,13 @@
     margin-bottom: 1rem;
 }
 
-.form-group label{
-    color:#fff;
+.form-group label {
+    color: #fff;
     display: block;
 }
 
 
-.form_container{
+.form_container {
     margin-top: 5px;
 }
 
@@ -158,58 +158,60 @@
     text-align: right;
 }
 
-.checkbox_container_input:focus+.checkbox_container_control, .checkbox_container_input:hover+.checkbox_container_control {
-    box-shadow: 0 0 0 10px rgba(10,10,35,.1);
+.checkbox_container_input:focus+.checkbox_container_control,
+.checkbox_container_input:hover+.checkbox_container_control {
+    box-shadow: 0 0 0 10px rgba(10, 10, 35, .1);
 }
 
 
 /* Toggle Button */
 .checkbox_toggle {
-	-webkit-appearance: none;
-	-webkit-tap-highlight-color: transparent;
-	position: relative;
-	border: 0;
-	outline: 0;
-	cursor: pointer;
-	margin-top: 5px;
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: transparent;
+    position: relative;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    margin-top: 5px;
 }
 
 
 /* To create surface of toggle button */
 .checkbox_toggle:after {
-	content: '';
-	width: 60px;
-	height: 28px;
-	display: inline-block;
-	background: rgba(196, 195, 195, 0.55);
-	border-radius: 18px;
-	clear: both;
+    content: '';
+    width: 60px;
+    height: 28px;
+    display: inline-block;
+    background: rgba(196, 195, 195, 0.55);
+    border-radius: 18px;
+    clear: both;
 }
 
 
 /* Contents before checkbox to create toggle handle */
 .checkbox_toggle:before {
-	content: '';
-	width: 22px;
-	height: 22px;
-	display: block;
-	position: absolute;
-	left: 5px;
-	top: 3px;
-	border-radius: 50%;
-	background: rgb(255, 255, 255);
-	box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+    content: '';
+    width: 22px;
+    height: 22px;
+    display: block;
+    position: absolute;
+    left: 5px;
+    top: 3px;
+    border-radius: 50%;
+    background: rgb(255, 255, 255);
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
 }
 
 
 /* Shift the handle to left on check event */
 .checkbox_toggle:checked:before {
-	left: 32px;
-	box-shadow: -1px 1px 3px rgba(0, 0, 0, 0.6);
+    left: 32px;
+    box-shadow: -1px 1px 3px rgba(0, 0, 0, 0.6);
 }
+
 /* Background color when toggle button will be active */
 .checkbox_toggle:checked:after {
-	background: #16a085;
+    background: #16a085;
 }
 
 .checkbox_toggle,
@@ -217,60 +219,60 @@
 .checkbox_toggle:after,
 .checkbox_toggle:checked:before,
 .checkbox_toggle:checked:after {
-	transition: ease .3s;
-	-webkit-transition: ease .3s;
-	-moz-transition: ease .3s;
-	-o-transition: ease .3s;
+    transition: ease .3s;
+    -webkit-transition: ease .3s;
+    -moz-transition: ease .3s;
+    -o-transition: ease .3s;
 }
 
-.slider_content_preview h2{
+.slider_content_preview h2 {
     text-align: center;
-    color:#fff;
-    margin:2rem 0;
+    color: #fff;
+    margin: 2rem 0;
 }
 
 .pointer-events-none {
     pointer-events: none;
 }
 
-.mt-3{
+.mt-3 {
     margin-top: 1.5rem;
 }
 
-.d-block{
+.d-block {
     display: block;
 }
 
-.slider_content_preview_center{
+.slider_content_preview_center {
     text-align: center;
     text-align: -webkit-center;
 }
 
-.social_profile_container .webflow-style-input{
+.social_profile_container .webflow-style-input {
     padding: 1rem;
 }
 
 .social_profile_container input,
-.social_profile_container input:focus{
+.social_profile_container input:focus {
     font-size: 1.3rem;
     line-height: 1rem;
 }
 
-.skillimagePReview{
+.skillimagePReview {
     min-width: 130px;
 }
 
-.skill_group_section{
+.skill_group_section {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
 }
 
-.skill_group_section .form-group{
+.skill_group_section .form-group {
     margin-right: 0.5rem;
 }
 
-.skill_single_container{
+.skill_single_container {
     background-color: rgb(220 252 231/1);
     border-radius: 0.175rem;
     align-items: center;
@@ -283,7 +285,7 @@
     margin: 0.5rem;
 }
 
-.skill_single_container .title{
+.skill_single_container .title {
     padding: 0.35rem;
     padding-left: 1rem;
     padding-right: 1rem;
@@ -291,19 +293,19 @@
 }
 
 
-.skill_single_container .button{
+.skill_single_container .button {
     padding-left: 0.5rem;
     padding-right: 0.5rem;
     padding-top: 0.2rem;
 }
 
-.skill_single_container .button svg{
+.skill_single_container .button svg {
     width: 1rem;
     height: 1rem
 }
 
 
-.skill_selected_container{
+.skill_selected_container {
     background-color: rgb(74 222 128/1);
     color: rgb(24 24 27/1);
 }
@@ -311,19 +313,19 @@
 .slider_content_settings input[type=number],
 .slider_content_settings input[type=number]:focus,
 .slider_content_settings input[type=text],
-.slider_content_settings input[type=text]:focus{
+.slider_content_settings input[type=text]:focus {
     width: 100%;
     padding: 10px;
     border: none;
     outline: none;
 }
 
-.color_picker_container > span{
-    width:60px;
-    height:35px;
+.color_picker_container>span {
+    width: 60px;
+    height: 35px;
 }
 
-.divider{
+.divider {
     width: 97%;
     height: 3px;
     margin: 1.5rem;
@@ -332,6 +334,68 @@
     animation: gradient 3s linear infinite;
 }
 
-.slider_content_settings_additonal h2{
+.slider_content_settings_additonal h2 {
     margin-bottom: 1.5rem;
+}
+
+.generateContent .button_container_row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.generateContent .button_container_row button {
+    transition: 0.3s all;
+    color: rgb(34 36 48);
+    border-color: rgb(35 36 49);
+    border-width: 2px;
+    border-radius: 0.375rem;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    padding: 0.3rem 1rem;
+    margin-right: 0.5rem;
+    cursor: pointer;
+}
+
+.generateContent .button_container_row button svg {
+    height: 1.5rem;
+    width: 1.5rem;
+    margin-left: 5px;
+}
+
+.generateContent .button_container_row button:hover{
+    background: rgb(35 36 49);
+    color: #fff;
+}
+
+.wmde-markdown{
+    white-space: pre-wrap;
+    padding: 1.5rem;
+    border-radius: 10px;
+}
+
+.wmde-markdown h2{
+    text-align: left;
+}
+
+.container_preview_container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2.5rem;
+}
+
+.container_preview_title{
+    background-color: #0d1117;
+    color: #fff;
+    font-size: 1.5rem;
+    padding: 10px 30px;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    text-align: center;
+}
+
+.wmde-markdown h1, .wmde-markdown h2, .wmde-markdown h3, .wmde-markdown h4, .wmde-markdown h5, .wmde-markdown h6{
+    margin: 0;
 }

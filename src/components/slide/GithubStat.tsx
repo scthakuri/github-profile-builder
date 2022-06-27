@@ -238,6 +238,13 @@ function GithubStat({ onBackPress }: Props) {
         setLangurl(generateLangURL());
     }, [compact])
 
+    const generateMarkDown = () => {
+        let markdowncode = `# 📊 GitHub Stats:\n`;
+        markdowncode += `![](${staturl})<br/>\n`;
+        markdowncode += `![](${streakurl})<br/>\n`;
+        markdowncode += `![](${streakurl})<br/>\n`;
+        localStorage.setItem("github_stat_markdown", markdowncode);
+    }
 
     useEffect(() => {
         setStaturl(generateStatURL());
@@ -317,13 +324,14 @@ function GithubStat({ onBackPress }: Props) {
     
                 <div className='btn_container'>
                     <button type="button" className="btn" onClick={() => {
-                        localStorage.setItem("github_statistics", JSON.stringify({
-                            theme : theme,
-                            border : border,
-                            lifetimecommit : lifetimecommit,
-                            privatecommit : privatecommit,
-                            compact : compact
-                        }));
+                        // localStorage.setItem("github_statistics", JSON.stringify({
+                        //     theme : theme,
+                        //     border : border,
+                        //     lifetimecommit : lifetimecommit,
+                        //     privatecommit : privatecommit,
+                        //     compact : compact
+                        // }));
+                        generateMarkDown();
                         setVisible(false)
                     }}>Next</button>
                 </div>

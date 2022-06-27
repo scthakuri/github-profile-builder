@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { donateURLGenerator } from '../../constants/config';
 import SliderHeader from '../elements/SliderHeader'
 import Additonal from './Additonal';
 
@@ -13,6 +14,23 @@ function Donate({ onBackPress }: Props) {
     const [coffee, setCoffee] = useState<string>("");
     const [pateron, setPateron] = useState<string>("");
     const [kofi, setKofi] = useState<string>("");
+
+    const generateMarkDownCode = () => {
+        try {
+            let markdowncode = donateURLGenerator.buymeacoffee(coffee);
+            markdowncode += donateURLGenerator.paypal(paypal);
+            markdowncode += donateURLGenerator.patreon(pateron);
+            markdowncode += donateURLGenerator.kofi(kofi);
+
+            if( markdowncode.length > 3 ){
+                markdowncode = `\n## 💰 You can help me by Donating\n` + markdowncode;
+            }
+
+            localStorage.setItem("donate_markdown", markdowncode);
+        } catch (error) {
+            
+        }
+    }
 
     if( visible ){
         return (
@@ -51,7 +69,7 @@ function Donate({ onBackPress }: Props) {
                                 <div className="webflow-style-input">
                                     <input type="text" placeholder="Patreon Username" value={pateron} onChange={(e: React.FormEvent<HTMLInputElement>) => setPateron(e.currentTarget.value)}></input>
                                     <button type="button">
-                                        <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" viewBox="0 0 24 24"><path fill="#212121" d="m4.219.5h-4.219v23h4.219z" /><path fill="#3e3e3e" d="m4.219.5h-2.11v23h2.11z" /><path fill="#f4511e" d="m15.384.5c-4.767 0-8.644 3.873-8.644 8.633 0 4.75 3.877 8.61 8.644 8.61 4.754 0 8.616-3.866 8.616-8.61 0-4.758-3.863-8.633-8.616-8.633z" /><path fill="#d4471a" d="m15.164.503c-4.665.117-8.424 3.944-8.424 8.63 0 4.677 3.759 8.491 8.424 8.608z" /></svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" enableBackground="new 0 0 24 24" viewBox="0 0 24 24"><path fill="#212121" d="m4.219.5h-4.219v23h4.219z" /><path fill="#3e3e3e" d="m4.219.5h-2.11v23h2.11z" /><path fill="#f4511e" d="m15.384.5c-4.767 0-8.644 3.873-8.644 8.633 0 4.75 3.877 8.61 8.644 8.61 4.754 0 8.616-3.866 8.616-8.61 0-4.758-3.863-8.633-8.616-8.633z" /><path fill="#d4471a" d="m15.164.503c-4.665.117-8.424 3.944-8.424 8.63 0 4.677 3.759 8.491 8.424 8.608z" /></svg>
                                     </button>
                                 </div>
                             </div>
@@ -62,7 +80,7 @@ function Donate({ onBackPress }: Props) {
                                 <div className="webflow-style-input">
                                     <input type="text" placeholder="Ko-Fi Username" value={kofi} onChange={(e: React.FormEvent<HTMLInputElement>) => setKofi(e.currentTarget.value)}></input>
                                     <button type="button">
-                                        <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" viewBox="0 0 24 24"><path fill="#FA5E5C" d="M23.881,9.005C23.108,4.998,19.022,4.5,19.022,4.5H0.723c-0.604,0-0.679,0.783-0.679,0.783s-0.082,7.184-0.022,11.596C0.186,19.257,2.608,19.5,2.608,19.5s8.267-0.022,11.966-0.048c2.438-0.418,2.683-2.517,2.658-3.663C21.584,16.025,24.654,13.012,23.881,9.005z M12.819,12.449c-1.246,1.425-4.011,3.9-4.011,3.9s-0.121,0.117-0.31,0.022c-0.076-0.056-0.108-0.088-0.108-0.088c-0.443-0.432-3.368-2.991-4.034-3.879c-0.709-0.947-1.041-2.648-0.091-3.639C5.216,7.775,7.27,7.701,8.628,9.165c0,0,1.565-1.748,3.468-0.945C14,9.025,13.928,11.174,12.819,12.449z M18.992,12.918c-0.928,0.114-1.682,0.027-1.682,0.027V7.373h1.77c0,0,1.971,0.541,1.971,2.588C21.051,11.837,20.066,12.577,18.992,12.918z" /></svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" enableBackground="new 0 0 24 24" viewBox="0 0 24 24"><path fill="#FA5E5C" d="M23.881,9.005C23.108,4.998,19.022,4.5,19.022,4.5H0.723c-0.604,0-0.679,0.783-0.679,0.783s-0.082,7.184-0.022,11.596C0.186,19.257,2.608,19.5,2.608,19.5s8.267-0.022,11.966-0.048c2.438-0.418,2.683-2.517,2.658-3.663C21.584,16.025,24.654,13.012,23.881,9.005z M12.819,12.449c-1.246,1.425-4.011,3.9-4.011,3.9s-0.121,0.117-0.31,0.022c-0.076-0.056-0.108-0.088-0.108-0.088c-0.443-0.432-3.368-2.991-4.034-3.879c-0.709-0.947-1.041-2.648-0.091-3.639C5.216,7.775,7.27,7.701,8.628,9.165c0,0,1.565-1.748,3.468-0.945C14,9.025,13.928,11.174,12.819,12.449z M18.992,12.918c-0.928,0.114-1.682,0.027-1.682,0.027V7.373h1.77c0,0,1.971,0.541,1.971,2.588C21.051,11.837,20.066,12.577,18.992,12.918z" /></svg>
                                     </button>
                                 </div>
                             </div>
@@ -71,12 +89,13 @@ function Donate({ onBackPress }: Props) {
                         <div className="col-md-12">
                                 <div className='btn_container'>
                                     <button type="button" className="btn" onClick={() => {
-                                        localStorage.setItem("github_donations", JSON.stringify({
-                                            paypal : paypal,
-                                            coffee : coffee,
-                                            pateron : pateron,
-                                            kofi : kofi
-                                        }))
+                                        // localStorage.setItem("github_donations", JSON.stringify({
+                                        //     paypal : paypal,
+                                        //     coffee : coffee,
+                                        //     pateron : pateron,
+                                        //     kofi : kofi
+                                        // }))
+                                        generateMarkDownCode();
                                         setVisible(false);
                                     }}>Next</button>
                                 </div>

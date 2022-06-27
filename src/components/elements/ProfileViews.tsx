@@ -42,6 +42,20 @@ function ProfileViews() {
     const [enable, setEnable] = useState(true);
     const [url, setUrl] = useState("");
 
+    const saveMarkdownCode = () => {
+        try {
+            let markdowncode = ``;
+
+            if( enable ){
+                markdowncode = `[![](${url})](https://sureshchand12a.github.io/github-profile-builder/)`;
+            }
+
+            localStorage.setItem("profile_views_markdown", markdowncode);
+        } catch (error) {
+            
+        }
+    }
+
     useEffect(() => {
         let prevurl = `https://komarev.com/ghpvc/?username=${username}`;
 
@@ -53,15 +67,19 @@ function ProfileViews() {
 
         prevurl += `&color=${colorCode || "009688"}`;
         prevurl += `&style=${style?.value || "for-the-badge"}`;
-        prevurl += `&label=${label || "Profile Views"}`;
 
-        localStorage.setItem("profile_views", JSON.stringify({
-            color : colorCode,
-            label : label,
-            style : style,
-            enable : enable,
-            url : prevurl
-        }));
+        let profileLabel = label || "Profile Views";
+        profileLabel = profileLabel.replace(/\s+/gi, "+");
+        prevurl += `&label=${profileLabel}`;        
+
+        // localStorage.setItem("profile_views", JSON.stringify({
+        //     color : colorCode,
+        //     label : label,
+        //     style : style,
+        //     enable : enable,
+        //     url : prevurl
+        // }));
+        saveMarkdownCode();
 
         setUrl(prevurl);
     }, [color, label, style])

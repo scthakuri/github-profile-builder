@@ -6,9 +6,11 @@ import SkillSelect from '../elements/SkillSelect';
 import Donate from './Donate';
 import { themeOptions } from '../../constants/config';
 import { SlideProps, ThemeProps } from '../../constants/type';
+import { AppContext } from '../../context/AppContext';
 
 function Skills({ onBackPress }: SlideProps) {
 
+    const { activeSkill } = React.useContext(AppContext);
     const [visible, setVisible] = useState(true);
     const [theme, setTheme] = useState<ThemeProps | null>({
         label: "For the badge",
@@ -20,6 +22,33 @@ function Skills({ onBackPress }: SlideProps) {
         localStorage.setItem("skill_theme", JSON.stringify(theme));
         setUrl(`https://img.shields.io/badge/-GraphQL-E10098?style=${theme?.value || "for-the-badge"}&logo=graphql&logoColor=white`);
     }, [theme])
+
+    const generateMarkDown = () => {
+        try {
+            let markdowncode = '';
+
+            if( activeSkill.length > 0 ){
+                activeSkill.map((item) => {
+                    const parts = item.split("_");
+                    const skillType : string = parts[0];
+                    const skillIndex : number = parseInt(parts[1]);
+
+                    if( skillType && skillType.length > 0 ){
+                        const skillData = skills.filter((x) => x.key == skillType)[0].data[skillIndex];
+                        markdowncode += `![${skillData.title}](${skillData.url})`;
+                    }
+                })
+            }
+
+            if( markdowncode.length > 3 ){
+                markdowncode = `\n## 💻 Tech Stack:\n` + markdowncode;
+            }
+
+            localStorage.setItem("skill_markdown", markdowncode);
+        } catch (error) {
+            
+        }
+    }
 
 
     if( visible ){
@@ -81,7 +110,10 @@ function Skills({ onBackPress }: SlideProps) {
                 </div>
     
                 <div className='btn_container'>
-                    <button type="button" className="btn" onClick={() => setVisible(false)}>Next</button>
+                    <button type="button" className="btn" onClick={() => {
+                        generateMarkDown();
+                        setVisible(false)
+                    }}>Next</button>
                 </div>
             </div>
         )
